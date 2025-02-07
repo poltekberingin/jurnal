@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silahkan isi form pendaftaran di bawah untuk mendapatkan ID PRO</title>
+    <link rel="icon" href="https://i.pinimg.com/280x280_RS/c1/c7/35/c1c735f65ab79b0503186309f9a43391.jpg" type="image/png">
+    <style>
+        body {
+            background-color: #0d1117;
+            color: white;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+        .container {
+            width: 40%;
+            margin: auto;
+            padding: 20px;
+            background: #161b22;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+        img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+        }
+        button {
+            background-color: #ff9800;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #e68900;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://tempat.jualprabot.xyz/img/jual.png" alt="Banner Pendaftaran">
+        <h2>Silahkan isi form pendaftaran di bawah untuk mendapatkan ID PRO</h2>
+        <form id="registrationForm">
+            <input type="text" id="username" placeholder="Masukkan Username" required>
+            
+            <select id="bank" required>
+                <option value="">Pilih Jenis Bank</option>
+                <option value="BCA">BCA</option>
+                <option value="Mandiri">Mandiri</option>
+                <option value="BRI">BRI</option>
+                <option value="BNI">BNI</option>
+                <option value="CIMB Niaga">CIMB Niaga</option>
+                <option value="Permata">Permata</option>
+            </select>
+            
+            <input type="text" id="rekening" placeholder="Masukkan Nomor Rekening" required>
+            <input type="text" id="namaRekening" placeholder="Masukkan Nama Rekening" required>
+            
+            <select id="server" required>
+                <option value="">Pilih Server</option>
+                <option value="Server 1">Server VIP Jepang</option>
+                <option value="Server 2">Server VIP Thailand</option>
+                <option value="Server 3">Server VIP Indonesia</option>
+                <option value="Server 4">Server VIP Kamboja</option>
+				<option value="Server 4">Server VIP Hongkong</option>
+            </select>
+            
+            <button type="button" onclick="submitForm()">Daftar</button>
+        </form>
+    </div>
+    
+    <script>
+        function submitForm() {
+            var username = document.getElementById("username").value;
+            var bank = document.getElementById("bank").value;
+            var rekening = document.getElementById("rekening").value;
+            var namaRekening = document.getElementById("namaRekening").value;
+            var server = document.getElementById("server").value;
+            
+            if (!username || !bank || !rekening || !namaRekening || !server) {
+                alert("Harap isi semua data!");
+                return;
+            }
+            
+            var message = "Halo Kak, saya ingin daftar ID gampang maxwinya, mohon di proses ya.%0A" +
+                          "----------------------------------%0A" +
+                          "*Username:* " + username + "%0A" +
+                          "*Jenis Bank:* " + bank + "%0A" +
+                          "*No. Rekening:* " + rekening + "%0A" +
+                          "*Rek Atas Nama:* " + namaRekening + "%0A" +
+                          "*Pilih Server:* " + server + "%0A" +
+                          "----------------------------------";
+            
+            var whatsappUrl = "https://api.whatsapp.com/send?phone=6282241106948&text=" + message;
+            window.location.href = whatsappUrl;
+        }
+    </script>
+</body>
+</html>
